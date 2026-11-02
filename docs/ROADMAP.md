@@ -11,7 +11,7 @@ intención. No se marca una tarea como completada sin verificación.
 - [x] Estructura `src/`, `content/`, `docs/`, `public/`.
 - [x] Tipos de contenido y acceso a contenido.
 - [x] Instalar dependencias (`npm install`) y generar lockfile.
-- [ ] Inicializar repositorio Git.
+- [x] Inicializar repositorio Git (`main`, remoto `JCAM2327/portfolio`).
 - [ ] Verificar `npm run typecheck` y `npm run build` (pendiente: el entorno de ejecución de la herramienta no permite lanzar procesos).
 
 ## Fase 1 — Shell de la aplicación
@@ -45,7 +45,9 @@ intención. No se marca una tarea como completada sin verificación.
 
 ## Fase 4 — Publicación
 
-- [ ] Configurar proyecto en Vercel.
+- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Contenido honesto: perfil, formación y proyectos marcados como pendientes; GitHub enlazado desde `NEXT_PUBLIC_GITHUB_URL`, LinkedIn y email pendientes.
+- [x] Publicar la vista de una página en GitHub Pages: <https://jcam2327.github.io/portfolio/>.
+- [ ] Configurar proyecto en Vercel (sitio Next.js); decidir si GitHub Pages desde `/docs` será el canal definitivo o solo una vista previa.
 - [ ] Definir dominio y `NEXT_PUBLIC_SITE_URL` de producción.
 - [ ] Configurar variables de entorno en el hosting.
 - [ ] Verificación posterior al despliegue.
@@ -61,5 +63,5 @@ Solo con necesidad funcional demostrable:
 ## Bloqueos conocidos
 
 - Falta confirmar biografía, formación, certificaciones, proyectos y enlaces.
-- No hay repositorio Git todavía.
 - `npm run typecheck` y `npm run build` no se han podido ejecutar en el entorno de la herramienta; deben verificarse localmente.
+- La herramienta de terminal (`bash`) no está disponible en esta sesión, así que no se pudo validar el HTML ni ejecutar Git; las comprobaciones deben hacerse localmente.

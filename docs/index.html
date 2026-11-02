@@ -5,10 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>José Carlos Alayo Mondragón — Portfolio</title>
   <meta name="description" content="Portfolio personal de José Carlos Alayo Mondragón: ciencia, tecnología e ingeniería. Sitio en construcción; biografía, formación y proyectos pendientes de verificación." />
-  <meta name="theme-color" content="#0b0f14" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://jcam2327.github.io/portfolio/" />
+  <link rel="sitemap" href="sitemap.xml" type="application/xml" />
+  <meta name="theme-color" content="#f7f7f4" />
+  <meta property="og:url" content="https://jcam2327.github.io/portfolio/" />
   <meta property="og:title" content="José Carlos Alayo Mondragón — Portfolio" />
   <meta property="og:description" content="Ciencia, tecnología e ingeniería. Portfolio en construcción: contenido pendiente de confirmación." />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary" />
   <script>
     (function () {
       var root = document.documentElement;
@@ -20,6 +26,8 @@
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
       root.setAttribute('data-theme', theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#060a0e' : '#f7f7f4');
     })();
   </script>
   <style>
@@ -74,9 +82,11 @@
     *::after { box-sizing: border-box; }
 
     html {
+      background: var(--bg);
       scroll-behavior: smooth;
       scroll-padding-top: calc(var(--header-h) + 16px);
     }
+
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -946,7 +956,7 @@
     </div>
   </header>
 
-  <main id="contenido">
+  <main id="contenido" tabindex="-1">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div>
@@ -1027,12 +1037,12 @@
           <span class="metric-label">proyectos publicados todavía</span>
         </div>
         <div class="metric">
-          <span class="metric-value">2</span>
-          <span class="metric-label">secciones con datos pendientes</span>
+          <span class="metric-value">1</span>
+          <span class="metric-label">enlace público verificado (GitHub)</span>
         </div>
         <div class="metric">
-          <span class="metric-value">100%</span>
-          <span class="metric-label">contenido por verificar antes de publicar</span>
+          <span class="metric-value">2</span>
+          <span class="metric-label">datos clave pendientes: perfil y formación</span>
         </div>
       </div>
     </section>
@@ -1407,12 +1417,25 @@
         if (event.target.closest('a')) closeNav();
       });
 
+      document.addEventListener('click', function (event) {
+        if (!nav.classList.contains('is-open')) return;
+        if (event.target.closest('#primary-nav') || event.target.closest('#nav-toggle')) return;
+        closeNav();
+      });
+
       document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape' && nav.classList.contains('is-open')) {
           closeNav();
           navToggle.focus();
         }
       });
+
+      var desktop = window.matchMedia('(min-width: 821px)');
+      if (desktop.addEventListener) {
+        desktop.addEventListener('change', function (event) {
+          if (event.matches) closeNav();
+        });
+      }
 
       /* Typewriter accesible */
       var typewriter = document.getElementById('typewriter');
