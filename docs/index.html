@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>José Carlos Alayo Mondragón — Portfolio</title>
-  <meta name="description" content="Portfolio personal de José Carlos Alayo Mondragón: ciencia, tecnología e ingeniería. Sitio en construcción; biografía, formación y proyectos pendientes de verificación." />
+  <meta name="description" content="Portfolio personal de José Carlos Alayo Mondragón: desarrollo web, datos e inteligencia artificial, ciencias, ingeniería y educación con tecnología. Catálogo de proyectos públicos con su estado real." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://jcam2327.github.io/portfolio/" />
   <link rel="sitemap" href="sitemap.xml" type="application/xml" />
   <meta name="theme-color" content="#f7f7f4" />
   <meta property="og:url" content="https://jcam2327.github.io/portfolio/" />
   <meta property="og:title" content="José Carlos Alayo Mondragón — Portfolio" />
-  <meta property="og:description" content="Ciencia, tecnología e ingeniería. Portfolio en construcción: contenido pendiente de confirmación." />
+  <meta property="og:description" content="Desarrollo web, datos e IA, ciencias, ingeniería y educación. Catálogo de proyectos públicos con su estado real." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta name="twitter:card" content="summary" />
@@ -644,7 +644,12 @@
       overflow: hidden;
       transition: transform 0.18s ease, border-color 0.18s ease;
     }
+    a.work-card { color: inherit; text-decoration: none; }
     .work-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+    .work-card:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      outline-offset: 3px;
+    }
     .work-card::after {
       content: "";
       position: absolute;
@@ -707,6 +712,150 @@
       margin-top: 20px;
       font-size: 0.82rem;
       color: var(--text-faint);
+    }
+
+    /* ---------- Projects ---------- */
+
+    .project-group + .project-group { margin-top: 40px; }
+    .project-group-title {
+      margin-bottom: 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-lg, var(--shadow));
+    }
+
+    .project-cover {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+    .project-cover-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-cover-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--surface-2), var(--surface));
+    }
+    .project-cover-placeholder span {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+    .project-cover-placeholder strong {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+    }
+    .project-cover-placeholder small {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-faint);
+    }
+
+    .project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .project-area {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+    .project-body h3 {
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+    .project-body p {
+      color: var(--text-soft);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .project-tags span {
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text-soft);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+    .project-link:hover {
+      border-color: var(--border-strong);
+      background: var(--surface-2);
+      color: var(--text);
+    }
+    .project-link:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      outline-offset: 2px;
     }
 
     /* ---------- Skills ---------- */
@@ -871,6 +1020,7 @@
       .hero-inner { grid-template-columns: 1fr; }
       .hero-card { max-width: 520px; }
       .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 820px) {
@@ -909,6 +1059,7 @@
       body { font-size: 16px; }
       .brand small { display: none; }
       .cards-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
       .metric { padding: 18px 0; }
       .metric:nth-child(even) { padding-left: 16px; }
       .hero-actions .button { width: 100%; }
@@ -932,6 +1083,7 @@
         <nav class="nav" id="primary-nav" aria-label="Navegación principal">
           <a href="#sobre-mi">Sobre mí</a>
           <a href="#enfoque">Enfoque</a>
+          <a href="#proyectos">Proyectos</a>
           <a href="#formacion">Formación</a>
           <a href="#habilidades">Habilidades</a>
           <a href="#contacto">Contacto</a>
@@ -981,8 +1133,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#enfoque">
-              Ver líneas de trabajo
+            <a class="button button-primary" href="#proyectos">
+              Ver proyectos
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6"></path>
               </svg>
@@ -994,7 +1146,7 @@
         <aside class="hero-card reveal" aria-label="Estado actual del sitio">
           <div class="hero-card-head">
             <h2>Estado del sitio</h2>
-            <span class="version mono">v0.1</span>
+            <span class="version mono">v0.2</span>
           </div>
           <ul class="status-list">
             <li>
@@ -1010,8 +1162,8 @@
               <span class="status status-pending">Por confirmar</span>
             </li>
             <li>
-              <span class="label">Proyectos publicados</span>
-              <span class="status status-empty">Sin publicar</span>
+              <span class="label">Proyectos en catálogo</span>
+              <span class="status status-done">24</span>
             </li>
             <li>
               <span class="label">Blog externo</span>
@@ -1019,8 +1171,8 @@
             </li>
           </ul>
           <p class="hero-card-note">
-            Nada se presenta como terminado sin evidencia verificable. Los datos personales,
-            la formación y los proyectos se agregarán cuando estén confirmados.
+            Nada se presenta como terminado sin evidencia verificable. Los proyectos ya están
+            en el catálogo con su estado real; las portadas que faltan se irán agregando.
           </p>
         </aside>
       </div>
@@ -1033,12 +1185,12 @@
           <span class="metric-label">áreas de interés declaradas</span>
         </div>
         <div class="metric">
-          <span class="metric-value">0</span>
-          <span class="metric-label">proyectos publicados todavía</span>
+          <span class="metric-value">24</span>
+          <span class="metric-label">proyectos en el catálogo</span>
         </div>
         <div class="metric">
-          <span class="metric-value">1</span>
-          <span class="metric-label">enlace público verificado (GitHub)</span>
+          <span class="metric-value">8</span>
+          <span class="metric-label">demos y sitios publicados</span>
         </div>
         <div class="metric">
           <span class="metric-value">2</span>
@@ -1109,15 +1261,15 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Enfoque</span>
-          <h2 id="enfoque-title">Líneas de trabajo, no proyectos terminados.</h2>
+          <h2 id="enfoque-title">Líneas de trabajo que conectan disciplinas.</h2>
           <p>
-            Estas son preguntas que guían mi aprendizaje y mi práctica. Describen temas de
-            interés; no representan resultados, clientes ni entregables.
+            Estas preguntas guían mi aprendizaje y mi práctica. Los proyectos concretos están
+            en el catálogo, con su estado real y sus enlaces públicos.
           </p>
         </div>
 
         <div class="cards-grid">
-          <article class="card work-card reveal">
+          <a class="card work-card reveal" href="#proyectos-datos-ia" aria-label="Ver proyectos de datos">
             <span class="work-index mono">01 / datos</span>
             <h3>Datos que ayuden a decidir</h3>
             <p class="work-question">¿Cómo pasar de datos dispersos a decisiones defendibles?</p>
@@ -1128,11 +1280,11 @@
             </div>
             <div class="work-foot">
               <span class="tag">En exploración</span>
-              <span aria-hidden="true">→</span>
+              <span>Ver proyectos <span aria-hidden="true">→</span></span>
             </div>
-          </article>
+          </a>
 
-          <article class="card work-card reveal">
+          <a class="card work-card reveal" href="#proyectos-frontend" aria-label="Ver proyectos de desarrollo web">
             <span class="work-index mono">02 / web</span>
             <h3>Herramientas web claras</h3>
             <p class="work-question">¿Cómo construir interfaces que expliquen lo complejo sin ruido?</p>
@@ -1143,11 +1295,11 @@
             </div>
             <div class="work-foot">
               <span class="tag">En uso en este sitio</span>
-              <span aria-hidden="true">→</span>
+              <span>Ver proyectos <span aria-hidden="true">→</span></span>
             </div>
-          </article>
+          </a>
 
-          <article class="card work-card reveal">
+          <a class="card work-card reveal" href="#proyectos-quimica-ciencias" aria-label="Ver proyectos de ciencia aplicada">
             <span class="work-index mono">03 / ciencia</span>
             <h3>Ciencia aplicada a la industria</h3>
             <p class="work-question">¿Cómo conectar química, física e ingeniería con software útil?</p>
@@ -1158,16 +1310,452 @@
             </div>
             <div class="work-foot">
               <span class="tag">En exploración</span>
-              <span aria-hidden="true">→</span>
+              <span>Ver proyectos <span aria-hidden="true">→</span></span>
             </div>
-          </article>
+          </a>
         </div>
 
         <p class="grid-note">
-          Los proyectos reales se incorporarán con su estado (<span class="mono">idea</span>,
-          <span class="mono">en desarrollo</span>, <span class="mono">MVP</span>…) y enlaces
-          públicos verificados. Mientras tanto, no hay casos de estudio publicados.
+          Cada proyecto declara su estado (<span class="mono">idea</span>,
+          <span class="mono">en desarrollo</span>, <span class="mono">MVP</span>,
+          <span class="mono">publicado</span>…) y sus enlaces públicos. Las portadas que faltan
+          se agregarán cuando existan imágenes verificables.
         </p>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proyectos</span>
+          <h2 id="proyectos-title">Catálogo de proyectos públicos.</h2>
+          <p>
+            24 proyectos organizados por área, con su estado real y enlaces verificados.
+            Algunas portadas todavía están pendientes de imagen.
+          </p>
+        </div>
+
+        <div class="project-group" id="proyectos-frontend">
+          <h3 class="project-group-title">Desarrollo frontend</h3>
+          <div class="projects-grid">
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/sabor-del-norte.webp" alt="Portada de Sabor del Norte" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Sabor del Norte</h3>
+                <p>Sitio web de delivery de comida peruana en Mar del Plata, pensado como emprendimiento familiar. Catálogo, carrito, carrusel y pedidos por WhatsApp; en proceso de mejora.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://web-restaurant-kj1e.vercel.app/" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Web_Restaurant" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/trabajo-muestra-programacion-web.webp" alt="Portada de Trabajo Muestra Programación Web" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Trabajo Muestra Programación Web</h3>
+                <p>Trabajo integrador de Programación Web: sitio responsive con HTML, CSS y JavaScript.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://trabajo-muestra-programacion-web.vercel.app" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Trabajo-Muestra-Programaci-n-Web-" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/encriptador-de-texto.webp" alt="Portada de Encriptador de texto" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Encriptador de texto</h3>
+                <p>Encriptador de texto del challenge de Alura Latam, con HTML, CSS y JavaScript.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://encriptador-de-texto-rho-nine.vercel.app" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Encriptador-de-texto" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/portafolio-ana-garcia.webp" alt="Portada de Portafolio Ana García" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Portafolio Ana García</h3>
+                <p>Portafolio de práctica sobre el perfil profesional de Ana García, con HTML, CSS y Flexbox.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>Flexbox</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://portafolio-chi-navy.vercel.app" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Portafolio" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>LOBO STORE</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">Prototipo</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>LOBO STORE</h3>
+                <p>Sitio web para una tienda de ropa y calzado con diseño urbano, catálogo y contacto por WhatsApp.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Lobo-Store-Web" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>AluraF</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>AluraF</h3>
+                <p>Challenge de Alura Latam: aplicación frontend con componentes, contextos y estilos propios.</p>
+                <div class="project-tags"><span>JavaScript</span><span>React</span><span>CSS</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/AluraF" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Prep Course Henry</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Prep Course Henry</h3>
+                <p>Material y ejercicios del Prep Course de Henry sobre JavaScript, HTML y CSS.</p>
+                <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Prep-Course" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>AluraGeek</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>AluraGeek</h3>
+                <p>Challenge de AluraGeek de Alura Latam: catálogo web construido con HTML, CSS y JavaScript.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/AluraGeek" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Challenge Portfolio</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Challenge Portfolio</h3>
+                <p>Challenge de portafolio de Alura Latam: página personal responsive con HTML y CSS.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Challengue-Portfolio" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Juego del número secreto</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Juego del número secreto</h3>
+                <p>Juego de adivinanza con lógica en JavaScript y manipulación del DOM.</p>
+                <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Juego-del-Numero-Secreto" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Juego Amigo Secreto</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>Juego Amigo Secreto</h3>
+                <p>Aplicación para organizar un amigo secreto, con sorteo sin autoasignaciones.</p>
+                <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Juego-Amigo-Secreto" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>TP1</strong><small>Desarrollo frontend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Desarrollo frontend</span>
+                </div>
+                <h3>TP1</h3>
+                <p>Primer trabajo práctico de desarrollo web: página estática en HTML.</p>
+                <div class="project-tags"><span>HTML</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/TP1" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-group" id="proyectos-backend">
+          <h3 class="project-group-title">Desarrollo backend</h3>
+          <div class="projects-grid">
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/chatbot-contable.webp" alt="Portada de Chatbot Contable" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Desarrollo backend</span>
+                </div>
+                <h3>Chatbot Contable</h3>
+                <p>Chatbot en lenguaje natural sobre un libro mayor contable, con FastAPI, Pandas y datos de ejemplo.</p>
+                <div class="project-tags"><span>Python</span><span>FastAPI</span><span>Pandas</span><span>NLP</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://chatbot-inteligente-contable.onrender.com" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Chatbot-contable" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Colectivo 221</strong><small>Desarrollo backend</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">Prototipo</span>
+                  <span class="project-area">Desarrollo backend</span>
+                </div>
+                <h3>Colectivo 221</h3>
+                <p>App de reportes ciudadanos para la línea de colectivo 221, hecha con Python y Streamlit.</p>
+                <div class="project-tags"><span>Python</span><span>Streamlit</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/colectivo-221" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-group" id="proyectos-datos-ia">
+          <h3 class="project-group-title">Datos e inteligencia artificial</h3>
+          <div class="projects-grid">
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>DataClean AI</strong><small>Datos e IA</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">En desarrollo</span>
+                  <span class="project-area">Datos e IA</span>
+                </div>
+                <h3>DataClean AI</h3>
+                <p>Plataforma para perfilar datasets, detectar problemas de calidad y recomendar limpieza y modelos.</p>
+                <div class="project-tags"><span>Python</span><span>FastAPI</span><span>Pandas</span><span>Scikit-learn</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/DataClean-AI" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/deteccion-de-fraudes.webp" alt="Portada de Detección de fraudes" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Datos e IA</span>
+                </div>
+                <h3>Detección de fraudes</h3>
+                <p>Sistema de detección de fraudes con machine learning, análisis de desbalanceo y dashboard interactivo.</p>
+                <div class="project-tags"><span>Python</span><span>XGBoost</span><span>Random Forest</span><span>Streamlit</span><span>SHAP</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://jcam2327.github.io/Deteccion_de_fraudes/" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Deteccion_de_fraudes" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>The Spotify Project Models</strong><small>Datos e IA</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">MVP</span>
+                  <span class="project-area">Datos e IA</span>
+                </div>
+                <h3>The Spotify Project Models</h3>
+                <p>Modelos de machine learning para explicar y predecir la intensidad musical en canciones.</p>
+                <div class="project-tags"><span>Python</span><span>Machine Learning</span><span>Pandas</span><span>Jupyter</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/the-spotify-project-models" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Data Cleaning Sales Pipeline</strong><small>Datos e IA</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">MVP</span>
+                  <span class="project-area">Datos e IA</span>
+                </div>
+                <h3>Data Cleaning Sales Pipeline</h3>
+                <p>Pipeline en Python para limpiar transacciones de ventas y generar reportes y gráficos.</p>
+                <div class="project-tags"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>FPDF</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Data_cleaning_sales_pipeline" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Geospatial ML</strong><small>Datos e IA</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Idea</span>
+                  <span class="project-area">Datos e IA</span>
+                </div>
+                <h3>Geospatial ML</h3>
+                <p>Repositorio inicial de un proyecto de machine learning geoespacial; contenido y alcance pendientes.</p>
+                <div class="project-tags"><span>Python</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Geospatial_ML" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-group" id="proyectos-quimica-ciencias">
+          <h3 class="project-group-title">Química y ciencias</h3>
+          <div class="projects-grid">
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Automatización de rendimiento en reacciones</strong><small>Química y ciencias</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">MVP</span>
+                  <span class="project-area">Química y ciencias</span>
+                </div>
+                <h3>Automatización de rendimiento en reacciones</h3>
+                <p>Aplicación en Streamlit para calcular y visualizar el rendimiento de síntesis químicas.</p>
+                <div class="project-tags"><span>Python</span><span>Streamlit</span><span>Pandas</span><span>Matplotlib</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/JCAM_Rx" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-group" id="proyectos-educacion-tecnologia">
+          <h3 class="project-group-title">Educación y tecnología</h3>
+          <div class="projects-grid">
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/apunte-probabilidad-estadistica.webp" alt="Portada de Apunte interactivo de Probabilidad y Estadística" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Educación y tecnología</span>
+                </div>
+                <h3>Apunte interactivo de Probabilidad y Estadística</h3>
+                <p>Apunte interactivo con teoría, calculadoras y ejercicios resueltos de Probabilidad y Estadística.</p>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://jcam2327.github.io/apunte-interactivo-de-probabilidad-y-estadistica/" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/apunte-interactivo-de-probabilidad-y-estadistica" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>R-Book</strong><small>Educación y tecnología</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-pending">En desarrollo</span>
+                  <span class="project-area">Educación y tecnología</span>
+                </div>
+                <h3>R-Book</h3>
+                <p>Proyecto en desarrollo de un lector inteligente con Python; alcance y funcionalidades pendientes.</p>
+                <div class="project-tags"><span>Python</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/R_Book" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-cover project-cover-placeholder" aria-hidden="true"><span>Portada pendiente</span><strong>Ejercicios de Python para ciencia de datos</strong><small>Educación y tecnología</small></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-empty">Archivado</span>
+                  <span class="project-area">Educación y tecnología</span>
+                </div>
+                <h3>Ejercicios de Python para ciencia de datos</h3>
+                <p>Ejercicios de Python para ciencia de datos del curso de LinkedIn Learning.</p>
+                <div class="project-tags"><span>Python</span><span>Pandas</span><span>Jupyter</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://github.com/JCAM2327/Ejercicios-python-ciencia-datos-LinkedIn" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-group" id="proyectos-interdisciplinario">
+          <h3 class="project-group-title">Proyectos interdisciplinarios</h3>
+          <div class="projects-grid">
+            <article class="card project-card reveal">
+              <div class="project-cover"><img class="project-cover-img" src="img/proyectos/trayectai.webp" alt="Portada de TrayectAI" width="1200" height="750" loading="lazy" /></div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="status status-done">Publicado</span>
+                  <span class="project-area">Interdisciplinario</span>
+                </div>
+                <h3>TrayectAI</h3>
+                <p>Copiloto académico para visualizar progreso, correlatividades y proyectar el egreso.</p>
+                <div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span></div>
+                <div class="project-links">
+                  <a class="project-link" href="https://trayectai.vercel.app" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/trayectai-demo" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 

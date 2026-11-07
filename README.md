@@ -2,7 +2,7 @@
 
 Sitio personal de **José Carlos Alayo Mondragón** para presentar su trayectoria académica, científica, tecnológica y profesional, junto con un enlace a un blog externo que documenta el proceso de aprendizaje.
 
-> Estado: sitio navegable con home, proyectos (listado y detalle), perfil, formación y contacto. La vista de una página está publicada en GitHub Pages: <https://jcam2327.github.io/portfolio/>. El sitio Next.js aún no está desplegado y el contenido de perfil está pendiente de confirmación.
+> Estado: sitio navegable con home, catálogo de 24 proyectos (listado y detalle), perfil, formación y contacto. La vista de una página está publicada en GitHub Pages: <https://jcam2327.github.io/portfolio/>. El sitio Next.js aún no está desplegado y el contenido de perfil está pendiente de confirmación.
 
 ## Enfoque
 

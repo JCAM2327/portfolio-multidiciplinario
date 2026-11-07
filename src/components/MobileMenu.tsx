@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import type { NavItem } from "@/lib/navigation";
+import { iconButtonClass, navLinkClass } from "@/lib/styles";
 
 interface MobileMenuProps {
   items: NavItem[];
@@ -12,12 +13,23 @@ interface MobileMenuProps {
 export function MobileMenu({ items }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (!open) {
-      return;
+    const desktop = window.matchMedia("(min-width: 821px)");
+
+    function handleDesktopChange(event: MediaQueryListEvent) {
+      if (event.matches) setOpen(false);
     }
+
+    desktop.addEventListener("change", handleDesktopChange);
+
+    return () => desktop.removeEventListener("change", handleDesktopChange);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -26,12 +38,26 @@ export function MobileMenu({ items }: MobileMenuProps) {
       }
     }
 
+    function handlePointerDown(event: PointerEvent) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
   }, [open]);
 
   return (
-    <div className="md:hidden">
+    <div ref={wrapperRef} className="min-[821px]:hidden">
       <button
         ref={buttonRef}
         type="button"
@@ -39,27 +65,27 @@ export function MobileMenu({ items }: MobileMenuProps) {
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-300 bg-white text-slate-700 transition-colors hover:bg-slate-100"
+        className={iconButtonClass}
       >
         {open ? (
-          <X aria-hidden="true" className="h-5 w-5" />
+          <X aria-hidden="true" className="h-[18px] w-[18px]" />
         ) : (
-          <Menu aria-hidden="true" className="h-5 w-5" />
+          <Menu aria-hidden="true" className="h-[18px] w-[18px]" />
         )}
       </button>
 
       <div
         id={panelId}
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-slate-200 bg-white shadow-sm"
+        className="absolute left-4 right-4 top-[calc(100%+8px)] max-h-[calc(100vh-88px)] overflow-y-auto rounded-[14px] border border-line bg-surface p-2.5 shadow-card"
       >
-        <nav aria-label="Navegación móvil" className="flex flex-col gap-1 p-4">
+        <nav aria-label="Navegación móvil" className="flex flex-col gap-1">
           {items.map((item) => (
             <NavLink
               key={`${item.href}-${item.label}`}
               item={item}
               onNavigate={() => setOpen(false)}
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+              className={`${navLinkClass} px-3 py-[11px]`}
             />
           ))}
         </nav>

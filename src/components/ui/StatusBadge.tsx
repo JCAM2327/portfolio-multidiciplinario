@@ -6,13 +6,13 @@ import {
 } from "@/types/content";
 
 const STATUS_STYLES: Record<ProjectStatus, string> = {
-  idea: "border-slate-300 bg-slate-50 text-slate-700",
-  "en desarrollo": "border-amber-300 bg-amber-50 text-amber-900",
-  MVP: "border-emerald-300 bg-emerald-50 text-emerald-900",
-  prototipo: "border-sky-300 bg-sky-50 text-sky-900",
-  publicado: "border-green-300 bg-green-50 text-green-900",
-  pausado: "border-orange-300 bg-orange-50 text-orange-900",
-  archivado: "border-slate-300 bg-slate-100 text-slate-600",
+  idea: "tone-neutral",
+  "en desarrollo": "tone-warning",
+  MVP: "tone-success",
+  prototipo: "tone-info",
+  publicado: "tone-accent",
+  pausado: "tone-orange",
+  archivado: "tone-neutral",
 };
 
 const EDUCATION_LABELS: Record<EducationStatus, string> = {
@@ -23,14 +23,16 @@ const EDUCATION_LABELS: Record<EducationStatus, string> = {
 };
 
 const EDUCATION_STYLES: Record<EducationStatus, string> = {
-  completado: "border-green-300 bg-green-50 text-green-900",
-  "en curso": "border-sky-300 bg-sky-50 text-sky-900",
-  incompleto: "border-orange-300 bg-orange-50 text-orange-900",
-  "pendiente de confirmación": "border-amber-300 bg-amber-50 text-amber-900",
+  completado: "tone-success",
+  "en curso": "tone-info",
+  incompleto: "tone-orange",
+  "pendiente de confirmación": "tone-warning",
 };
 
 const badgeBase =
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium";
+  "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold";
+
+const dotClass = "h-1.5 w-1.5 shrink-0 rounded-full bg-current";
 
 interface StatusBadgeProps {
   status: ProjectStatus;
@@ -40,6 +42,7 @@ interface StatusBadgeProps {
 export function StatusBadge({ status, className }: StatusBadgeProps) {
   return (
     <span className={clsx(badgeBase, STATUS_STYLES[status], className)}>
+      <span aria-hidden="true" className={dotClass} />
       {PROJECT_STATUS_LABELS[status]}
     </span>
   );
@@ -56,6 +59,7 @@ export function EducationStatusBadge({
 }: EducationStatusBadgeProps) {
   return (
     <span className={clsx(badgeBase, EDUCATION_STYLES[status], className)}>
+      <span aria-hidden="true" className={dotClass} />
       {EDUCATION_LABELS[status]}
     </span>
   );

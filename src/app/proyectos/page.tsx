@@ -3,15 +3,26 @@ import { ProjectExplorer } from "@/components/projects/ProjectExplorer";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { getProjectSummaries } from "@/lib/content";
+import { AREA_SLUGS, type AreaSlug } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Proyectos",
   description:
     "Proyectos de desarrollo, datos, ciencia e ingeniería presentados con su estado real.",
+  alternates: { canonical: "/proyectos" },
 };
 
-export default function ProjectsPage() {
+interface ProjectsPageProps {
+  searchParams: Promise<{ area?: string | string[] }>;
+}
+
+export default async function ProjectsPage({ searchParams }: ProjectsPageProps) {
   const projects = getProjectSummaries();
+  const { area } = await searchParams;
+  const initialArea =
+    typeof area === "string" && AREA_SLUGS.includes(area as AreaSlug)
+      ? (area as AreaSlug)
+      : undefined;
 
   return (
     <Container>
@@ -20,7 +31,7 @@ export default function ProjectsPage() {
         title="Proyectos"
         description="Cada proyecto declara su estado real, desde ideas hasta publicados."
       />
-      <ProjectExplorer projects={projects} />
+      <ProjectExplorer projects={projects} initialArea={initialArea} />
     </Container>
   );
 }

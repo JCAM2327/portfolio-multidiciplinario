@@ -69,6 +69,27 @@ function stringList(data: Frontmatter, key: string): string[] {
     : [];
 }
 
+const COVER_EXTENSIONS = ["png", "jpg", "jpeg", "webp", "avif"];
+
+function findCover(slug: string, explicit?: string): string | undefined {
+  if (explicit) {
+    return explicit;
+  }
+
+  const dir = path.join(process.cwd(), "public", "proyectos", slug);
+  if (!existsSync(dir)) {
+    return undefined;
+  }
+
+  for (const extension of COVER_EXTENSIONS) {
+    if (existsSync(path.join(dir, `cover.${extension}`))) {
+      return `/proyectos/${slug}/cover.${extension}`;
+    }
+  }
+
+  return undefined;
+}
+
 function isAreaSlug(value: unknown): value is AreaSlug {
   return (
     typeof value === "string" &&
@@ -104,7 +125,7 @@ function toProject(entry: RawEntry): Project {
     lastUpdated: requireString(entry.data, "lastUpdated", source),
     repoUrl: optionalString(entry.data, "repoUrl"),
     demoUrl: optionalString(entry.data, "demoUrl"),
-    cover: optionalString(entry.data, "cover"),
+    cover: findCover(entry.slug, optionalString(entry.data, "cover")),
     content: entry.body,
   };
 }

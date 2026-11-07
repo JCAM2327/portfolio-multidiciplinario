@@ -22,12 +22,15 @@ intención. No se marca una tarea como completada sin verificación.
 - [x] Componentes de UI reutilizables (contenedor, tarjeta, insignia de estado).
 - [x] Navegación móvil accesible.
 - [x] Metadatos globales y Open Graph.
+- [x] Adaptar el home de Next.js al sistema visual de `docs/index.html` (hero oscuro, métricas, secciones y contacto).
+- [x] Tema claro/oscuro con `data-theme`, `ThemeToggle` y `Typewriter` accesible.
+- [x] Utilidades compartidas: estilos (`src/lib/styles.ts`), navegación (`src/lib/navigation.ts`) y copy/datos (`src/lib/portfolio.ts`).
 
 ## Fase 2 — Contenido y rutas
 
 - [ ] Completar `content/perfil.md` con datos confirmados.
 - [ ] Completar `content/formacion.md` con datos confirmados.
-- [ ] Cargar proyectos reales con su estado y enlaces verificados.
+- [x] Cargar proyectos reales con su estado y enlaces verificados (24 proyectos; 8 demos vivas y 16 portadas pendientes).
 - [x] `/proyectos` con filtros por área y estado.
 - [x] `/proyectos/[slug]` con render MDX.
 - [x] Enlace al blog externo (`NEXT_PUBLIC_BLOG_URL`) en la home.
@@ -37,15 +40,15 @@ intención. No se marca una tarea como completada sin verificación.
 
 ## Fase 3 — Calidad
 
-- [ ] Revisión de accesibilidad (teclado, foco, contraste, semántica). Revisión de código hecha: skip link, foco visible, `aria-current` y menú con Escape; falta prueba manual en navegador.
-- [x] SEO: `sitemap.xml`, `robots.txt`, metadatos por página.
-- [ ] Rendimiento: imágenes optimizadas, JS de cliente mínimo. No hay imágenes; islas cliente limitadas a menú, navegación y filtros. Falta medir.
+- [ ] Revisión de accesibilidad (teclado, foco, contraste, semántica) y de paridad visual Next.js ↔ `docs/index.html`. Revisión de código hecha: skip link, foco visible, `aria-current`, menú con Escape, tema persistente y `typecheck`/`build` correctos; falta prueba manual en navegador.
+- [x] SEO: `sitemap.xml`, `robots.txt`, favicon (`src/app/icon.svg`), canonical y metadatos por página.
+- [ ] Rendimiento: portadas WebP agregadas y JS de cliente limitado a menú, navegación, filtros, tema y typewriter. Falta medir Lighthouse y completar las 16 portadas restantes.
 - [x] Revisión de contenido contra las reglas de privacidad y honestidad.
 - [x] Enlaces externos con `rel="noopener noreferrer"`.
 
 ## Fase 4 — Publicación
 
-- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Contenido honesto: perfil, formación y proyectos marcados como pendientes; GitHub enlazado desde `NEXT_PUBLIC_GITHUB_URL`, LinkedIn y email pendientes.
+- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Incluye catálogo de 24 proyectos, portadas disponibles y estados reales; perfil, formación, LinkedIn y email siguen pendientes.
 - [x] Publicar la vista de una página en GitHub Pages: <https://jcam2327.github.io/portfolio/>.
 - [ ] Configurar proyecto en Vercel (sitio Next.js); decidir si GitHub Pages desde `/docs` será el canal definitivo o solo una vista previa.
 - [ ] Definir dominio y `NEXT_PUBLIC_SITE_URL` de producción.
@@ -62,6 +65,7 @@ Solo con necesidad funcional demostrable:
 
 ## Bloqueos conocidos
 
-- Falta confirmar biografía, formación, certificaciones, proyectos y enlaces.
-- `npm run typecheck` y `npm run build` no se han podido ejecutar en el entorno de la herramienta; deben verificarse localmente.
-- La herramienta de terminal (`bash`) no está disponible en esta sesión, así que no se pudo validar el HTML ni ejecutar Git; las comprobaciones deben hacerse localmente.
+- Falta confirmar biografía, formación, certificaciones y enlaces profesionales.
+- Quedan 16 proyectos sin portada propia; usan un placeholder hasta que exista una imagen verificable.
+- Las demos de The Spotify Project Models y JCAM Rx devuelven 404; se retiraron sus enlaces y se marcaron como MVP.
+- La paridad visual y la accesibilidad todavía requieren una prueba manual en navegador.

@@ -94,13 +94,13 @@ Rutas previstas de la primera versión:
 
 | Ruta | Descripción | Estado |
 |---|---|---|
-| `/` | Inicio: presentación, áreas destacadas, proyectos y enlace al blog | En construcción |
-| `/sobre-mi` | Perfil, enfoque y trayectoria resumida | Pendiente |
-| `/proyectos` | Listado de proyectos con filtros por área y estado | Pendiente |
-| `/proyectos/[slug]` | Detalle de proyecto en MDX | Pendiente |
+| `/` | Inicio: presentación, áreas destacadas, proyectos y enlace al blog | Implementado; perfil pendiente |
+| `/sobre-mi` | Perfil, enfoque y trayectoria resumida | Implementado; contenido pendiente |
+| `/proyectos` | Listado de proyectos con filtros por área y estado | Implementado (24 proyectos) |
+| `/proyectos/[slug]` | Detalle de proyecto en MDX | Implementado |
 | Blog (externo) | Enlace configurable vía `NEXT_PUBLIC_BLOG_URL` | Enlace externo |
-| `/formacion` | Formación académica y certificaciones confirmadas | Pendiente |
-| `/contacto` | Enlaces profesionales desde variables de entorno | Pendiente |
+| `/formacion` | Formación académica y certificaciones confirmadas | Implementado; contenido pendiente |
+| `/contacto` | Enlaces profesionales desde variables de entorno | Implementado; LinkedIn/email pendientes |
 
 Reglas de rutas:
 
@@ -260,7 +260,7 @@ Si una variable opcional está vacía, el enlace correspondiente no se muestra.
 - [ ] Biografía y enfoque definitivos.
 - [ ] Formación académica real (institución, programa, estado, fechas).
 - [ ] Certificaciones y su verificabilidad.
-- [ ] Proyectos reales, su estado y enlaces públicos.
+- [x] Proyectos reales, su estado y enlaces públicos (24 proyectos; 16 portadas pendientes).
 - [ ] Enlaces profesionales y email de contacto.
 - [ ] URL del blog externo para `NEXT_PUBLIC_BLOG_URL`.
 - [ ] Dominio de producción para `NEXT_PUBLIC_SITE_URL`.

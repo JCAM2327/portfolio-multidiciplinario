@@ -9,7 +9,7 @@ interface SectionProps {
 
 export function Section({ children, className, id }: SectionProps) {
   return (
-    <section id={id} className={clsx("scroll-mt-20 py-12 sm:py-16 lg:py-20", className)}>
+    <section id={id} className={clsx("py-[clamp(56px,8vw,92px)]", className)}>
       {children}
     </section>
   );

@@ -1,52 +1,34 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { PORTFOLIO_COPY } from "@/lib/portfolio";
 import { siteConfig } from "@/lib/site";
-
-const linkClass =
-  "inline-flex items-center gap-1.5 text-sm text-slate-600 transition-colors hover:text-slate-900";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <Container className="flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-slate-500">
-          © {year} {siteConfig.name}. Sitio en construcción.
+    <footer className="border-t border-line bg-surface py-[30px]">
+      <Container className="flex flex-wrap items-center justify-between gap-[14px] text-[0.82rem] text-faint">
+        <p>
+          © {year} {siteConfig.name}. {PORTFOLIO_COPY.footer.note}
         </p>
-
-        <div className="flex flex-wrap items-center gap-4">
-          {siteConfig.links.github ? (
-            <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={linkClass}
-            >
-              <Github aria-hidden="true" className="h-4 w-4" />
-              GitHub
-            </a>
-          ) : null}
-
-          {siteConfig.links.linkedin ? (
-            <a
-              href={siteConfig.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={linkClass}
-            >
-              <Linkedin aria-hidden="true" className="h-4 w-4" />
-              LinkedIn
-            </a>
-          ) : null}
-
-          {siteConfig.links.email ? (
-            <a href={`mailto:${siteConfig.links.email}`} className={linkClass}>
-              <Mail aria-hidden="true" className="h-4 w-4" />
-              Contacto
-            </a>
-          ) : null}
-        </div>
+        <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span>{PORTFOLIO_COPY.footer.pending}</span>
+          <span aria-hidden="true">·</span>
+          <Link
+            href="/proyectos"
+            className="font-semibold text-muted underline decoration-line-strong underline-offset-4 transition-colors hover:text-ink"
+          >
+            Proyectos
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link
+            href="/#inicio"
+            className="font-semibold text-muted underline decoration-line-strong underline-offset-4 transition-colors hover:text-ink"
+          >
+            {PORTFOLIO_COPY.footer.backToTop}
+          </Link>
+        </p>
       </Container>
     </footer>
   );

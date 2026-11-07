@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Info } from "lucide-react";
 import { clsx } from "clsx";
 
 interface PendingNoticeProps {
@@ -8,13 +9,17 @@ interface PendingNoticeProps {
 
 export function PendingNotice({ children, className }: PendingNoticeProps) {
   return (
-    <p
+    <div
+      role="note"
       className={clsx(
-        "rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900",
-        className
+        "notice-warning flex items-start gap-3 rounded-control p-4 text-sm leading-relaxed shadow-sm",
+        className,
       )}
     >
-      {children}
-    </p>
+      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f59e0b]/15 text-[var(--tone-warning)]">
+        <Info aria-hidden="true" className="h-4 w-4" />
+      </span>
+      <div className="min-w-0">{children}</div>
+    </div>
   );
 }
