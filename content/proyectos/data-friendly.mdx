@@ -1,0 +1,43 @@
+---
+title: "Data Friendly"
+summary: "Producto que unifica una interfaz de análisis con un motor Python de perfilado, limpieza, EDA, validación y modelos."
+area: "datos-ia"
+status: "en desarrollo"
+technologies:
+  - Python
+  - FastAPI
+  - Pandas
+  - Scikit-learn
+  - TypeScript
+  - React
+  - TanStack Start
+featured: true
+lastUpdated: "2026-11-07"
+repoUrl: "https://github.com/JCAM2327/data-companion"
+---
+
+## Qué es
+
+Data Friendly es el producto que integra dos repositorios con responsabilidades separadas:
+
+- [data-companion](https://github.com/JCAM2327/data-companion): interfaz web para cargar datasets, revisar el perfil, explorar el EDA, validar reglas de calidad y aceptar un plan de limpieza.
+- [dataclean-ai](https://github.com/JCAM2327/dataclean-ai): motor en Python con API FastAPI para perfilado, detección de problemas, limpieza, análisis exploratorio, validación y comparación de modelos.
+
+## Funcionalidades
+
+- Carga de archivos CSV, Excel y Parquet.
+- Perfilado de columnas y detección de nulos, duplicados, constantes y valores atípicos.
+- Plan de limpieza con imputación, clipping, estandarización, codificación y exclusión de variables.
+- Análisis exploratorio con distribuciones, correlaciones, series temporales e insights.
+- Reglas de validación y score de calidad en seis dimensiones.
+- Detección de variable objetivo y comparación de modelos baseline.
+- Informe HTML autocontenido e importancias de variables.
+
+## Estado
+
+En desarrollo. La API del motor ya expone el contrato de análisis y validación; la demo pública combinada todavía no está desplegada. No se declaran resultados medidos ni métricas de uso.
+
+## Repositorios
+
+- [Interfaz web](https://github.com/JCAM2327/data-companion)
+- [Motor backend](https://github.com/JCAM2327/dataclean-ai)
