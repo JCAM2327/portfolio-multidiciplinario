@@ -49,7 +49,7 @@ intención. No se marca una tarea como completada sin verificación.
 ## Fase 4 — Publicación
 
 - [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Incluye catálogo de 22 proyectos, portadas disponibles y estados reales; perfil, formación, LinkedIn y email siguen pendientes.
-- [x] Publicar la vista de una página en GitHub Pages: <https://jcam2327.github.io/portfolio/>.
+- [x] Publicar la vista de una página en GitHub Pages: <https://jcam2327.github.io/portfolio-multidiciplinario/>.
 - [ ] Configurar proyecto en Vercel (sitio Next.js); decidir si GitHub Pages desde `/docs` será el canal definitivo o solo una vista previa.
 - [ ] Definir dominio y `NEXT_PUBLIC_SITE_URL` de producción.
 - [ ] Configurar variables de entorno en el hosting.
