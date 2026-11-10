@@ -30,7 +30,7 @@ intención. No se marca una tarea como completada sin verificación.
 
 - [ ] Completar `content/perfil.md` con datos confirmados.
 - [ ] Completar `content/formacion.md` con datos confirmados.
-- [x] Cargar proyectos reales con su estado y enlaces verificados (21 proyectos; 10 demos vivas y 11 portadas pendientes).
+- [x] Cargar proyectos reales con su estado y enlaces verificados (20 proyectos; 9 demos vivas y 11 portadas pendientes).
 - [x] `/proyectos` con filtros por área y estado.
 - [x] `/proyectos/[slug]` con render MDX.
 - [x] Enlace al blog externo (`NEXT_PUBLIC_BLOG_URL`) en la home.
@@ -48,7 +48,7 @@ intención. No se marca una tarea como completada sin verificación.
 
 ## Fase 4 — Publicación
 
-- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Incluye catálogo de 21 proyectos, portadas disponibles y estados reales; perfil, formación, LinkedIn y email siguen pendientes.
+- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Incluye catálogo de 20 proyectos, portadas disponibles y estados reales; perfil, formación, LinkedIn y email siguen pendientes.
 - [x] Publicar la vista de una página en GitHub Pages: <https://jcam2327.github.io/portfolio-multidiciplinario/>.
 - [ ] Configurar proyecto en Vercel (sitio Next.js); decidir si GitHub Pages desde `/docs` será el canal definitivo o solo una vista previa.
 - [ ] Definir dominio y `NEXT_PUBLIC_SITE_URL` de producción.

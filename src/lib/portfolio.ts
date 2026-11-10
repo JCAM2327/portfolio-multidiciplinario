@@ -124,14 +124,14 @@ export const SITE_STATUS: StatusEntry[] = [
   { label: "Estructura y diseño", value: "Listo", tone: "success" },
   { label: "Perfil y biografía", value: "Por confirmar", tone: "warning" },
   { label: "Formación académica", value: "Por confirmar", tone: "warning" },
-  { label: "Proyectos en catálogo", value: "21", tone: "success" },
+  { label: "Proyectos en catálogo", value: "20", tone: "success" },
   { label: "Blog externo", value: "Sin URL", tone: "neutral" },
 ];
 
 export const METRICS: Metric[] = [
   { value: 7, label: "áreas de interés declaradas" },
-  { value: 21, label: "proyectos en el catálogo" },
-  { value: 10, label: "demos y sitios publicados" },
+  { value: 20, label: "proyectos en el catálogo" },
+  { value: 9, label: "demos y sitios publicados" },
   { value: 2, label: "datos clave pendientes: perfil y formación" },
 ];
 
