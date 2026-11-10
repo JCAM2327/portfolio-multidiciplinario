@@ -131,7 +131,7 @@ export const SITE_STATUS: StatusEntry[] = [
 export const METRICS: Metric[] = [
   { value: 7, label: "áreas de interés declaradas" },
   { value: 21, label: "proyectos en el catálogo" },
-  { value: 9, label: "demos y sitios publicados" },
+  { value: 10, label: "demos y sitios publicados" },
   { value: 2, label: "datos clave pendientes: perfil y formación" },
 ];
 

@@ -30,7 +30,7 @@ intención. No se marca una tarea como completada sin verificación.
 
 - [ ] Completar `content/perfil.md` con datos confirmados.
 - [ ] Completar `content/formacion.md` con datos confirmados.
-- [x] Cargar proyectos reales con su estado y enlaces verificados (21 proyectos; 9 demos vivas y 12 portadas pendientes).
+- [x] Cargar proyectos reales con su estado y enlaces verificados (21 proyectos; 10 demos vivas y 11 portadas pendientes).
 - [x] `/proyectos` con filtros por área y estado.
 - [x] `/proyectos/[slug]` con render MDX.
 - [x] Enlace al blog externo (`NEXT_PUBLIC_BLOG_URL`) en la home.
@@ -42,7 +42,7 @@ intención. No se marca una tarea como completada sin verificación.
 
 - [ ] Revisión de accesibilidad (teclado, foco, contraste, semántica) y de paridad visual Next.js ↔ `docs/index.html`. Revisión de código hecha: skip link, foco visible, `aria-current`, menú con Escape, tema persistente y `typecheck`/`build` correctos; falta prueba manual en navegador.
 - [x] SEO: `sitemap.xml`, `robots.txt`, favicon (`src/app/icon.svg`), canonical y metadatos por página.
-- [ ] Rendimiento: portadas WebP agregadas y JS de cliente limitado a menú, navegación, filtros, tema y typewriter. Falta medir Lighthouse y completar las 12 portadas restantes.
+- [ ] Rendimiento: portadas WebP agregadas y JS de cliente limitado a menú, navegación, filtros, tema y typewriter. Falta medir Lighthouse y completar las 11 portadas restantes.
 - [x] Revisión de contenido contra las reglas de privacidad y honestidad.
 - [x] Enlaces externos con `rel="noopener noreferrer"`.
 

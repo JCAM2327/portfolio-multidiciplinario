@@ -260,7 +260,7 @@ Si una variable opcional está vacía, el enlace correspondiente no se muestra.
 - [ ] Biografía y enfoque definitivos.
 - [ ] Formación académica real (institución, programa, estado, fechas).
 - [ ] Certificaciones y su verificabilidad.
-- [x] Proyectos reales, su estado y enlaces públicos (21 proyectos; 12 portadas pendientes).
+- [x] Proyectos reales, su estado y enlaces públicos (21 proyectos; 11 portadas pendientes).
 - [ ] Enlaces profesionales y email de contacto.
 - [ ] URL del blog externo para `NEXT_PUBLIC_BLOG_URL`.
 - [ ] Dominio de producción para `NEXT_PUBLIC_SITE_URL`.
