@@ -30,7 +30,7 @@ intención. No se marca una tarea como completada sin verificación.
 
 - [ ] Completar `content/perfil.md` con datos confirmados.
 - [ ] Completar `content/formacion.md` con datos confirmados.
-- [x] Cargar proyectos reales con su estado y enlaces verificados (24 proyectos; 8 demos vivas y 16 portadas pendientes).
+- [x] Cargar proyectos reales con su estado y enlaces verificados (23 proyectos; 9 demos vivas y 14 portadas pendientes).
 - [x] `/proyectos` con filtros por área y estado.
 - [x] `/proyectos/[slug]` con render MDX.
 - [x] Enlace al blog externo (`NEXT_PUBLIC_BLOG_URL`) en la home.
@@ -42,13 +42,13 @@ intención. No se marca una tarea como completada sin verificación.
 
 - [ ] Revisión de accesibilidad (teclado, foco, contraste, semántica) y de paridad visual Next.js ↔ `docs/index.html`. Revisión de código hecha: skip link, foco visible, `aria-current`, menú con Escape, tema persistente y `typecheck`/`build` correctos; falta prueba manual en navegador.
 - [x] SEO: `sitemap.xml`, `robots.txt`, favicon (`src/app/icon.svg`), canonical y metadatos por página.
-- [ ] Rendimiento: portadas WebP agregadas y JS de cliente limitado a menú, navegación, filtros, tema y typewriter. Falta medir Lighthouse y completar las 16 portadas restantes.
+- [ ] Rendimiento: portadas WebP agregadas y JS de cliente limitado a menú, navegación, filtros, tema y typewriter. Falta medir Lighthouse y completar las 14 portadas restantes.
 - [x] Revisión de contenido contra las reglas de privacidad y honestidad.
 - [x] Enlaces externos con `rel="noopener noreferrer"`.
 
 ## Fase 4 — Publicación
 
-- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Incluye catálogo de 24 proyectos, portadas disponibles y estados reales; perfil, formación, LinkedIn y email siguen pendientes.
+- [x] Crear `docs/index.html`: portfolio de una página, autocontenido, publicable con GitHub Pages desde `/docs` (`docs/.nojekyll` incluido). Incluye catálogo de 23 proyectos, portadas disponibles y estados reales; perfil, formación, LinkedIn y email siguen pendientes.
 - [x] Publicar la vista de una página en GitHub Pages: <https://jcam2327.github.io/portfolio/>.
 - [ ] Configurar proyecto en Vercel (sitio Next.js); decidir si GitHub Pages desde `/docs` será el canal definitivo o solo una vista previa.
 - [ ] Definir dominio y `NEXT_PUBLIC_SITE_URL` de producción.
@@ -66,6 +66,6 @@ Solo con necesidad funcional demostrable:
 ## Bloqueos conocidos
 
 - Falta confirmar biografía, formación, certificaciones y enlaces profesionales.
-- Quedan 16 proyectos sin portada propia; usan un placeholder hasta que exista una imagen verificable.
-- Las demos de The Spotify Project Models y JCAM Rx devuelven 404; se retiraron sus enlaces y se marcaron como MVP.
+- Quedan 14 proyectos sin portada propia; usan un placeholder hasta que exista una imagen verificable.
+- La demo de The Spotify Project Models devuelve 404; se retiró su enlace y quedó como MVP. Automatización de rendimiento en reacciones tiene demo pública en Vercel.
 - La paridad visual y la accesibilidad todavía requieren una prueba manual en navegador.

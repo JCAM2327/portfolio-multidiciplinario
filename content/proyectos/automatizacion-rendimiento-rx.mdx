@@ -1,32 +1,37 @@
 ---
 title: "Automatización de rendimiento en reacciones"
-summary: "Aplicación en Streamlit para calcular y visualizar el rendimiento de síntesis químicas."
+summary: "Aplicación web para calcular y visualizar el rendimiento de síntesis químicas desde Excel o CSV."
 area: "quimica-ciencias"
 status: "MVP"
 technologies:
-  - Python
-  - Streamlit
-  - Pandas
-  - Matplotlib
+  - Next.js
+  - React
+  - TypeScript
+  - xlsx
 featured: true
-lastUpdated: "2025-08-05"
-repoUrl: "https://github.com/JCAM2327/JCAM_Rx"
+lastUpdated: "2026-11-07"
+repoUrl: "https://github.com/JCAM2327/JCAM2327-Automatizacion_Rendimiento_Rx"
+demoUrl: "https://rendimientoquimico.vercel.app"
 ---
 
 ## Qué es
 
-Herramienta para registrar reactivos, productos y cantidades en una reacción química, calcular el rendimiento y visualizar los resultados.
+Herramienta para calcular el rendimiento de síntesis químicas a partir de las masas de producto real y producto teórico, y visualizar los resultados.
 
 ## Funcionalidades
 
-- Cálculo de rendimiento a partir de masas o moles.
-- Tabla de datos y gráficos.
-- Interfaz web con Streamlit.
+- Carga de archivos Excel o CSV y vista previa de los datos.
+- Selección de las columnas de producto real y producto teórico.
+- Cálculo del rendimiento por fila y estadísticas descriptivas.
+- Gráfico de barras con promedio y tolerancia de ±5%.
+- Exportación de los resultados a Excel.
+- Procesamiento local en el navegador, sin backend ni persistencia.
 
 ## Estado
 
-MVP. La demo de Vercel ya no está disponible; se conserva el repositorio. La herramienta es una ayuda de cálculo y no reemplaza la validación experimental ni los procedimientos de laboratorio.
+MVP con demo pública en Vercel. El repositorio incluye una implementación en Next.js y conserva la versión anterior en Streamlit. La herramienta es una ayuda de cálculo y no reemplaza la validación experimental ni los procedimientos de laboratorio.
 
-## Enlace
+## Enlaces
 
-- [Repositorio en GitHub](https://github.com/JCAM2327/JCAM_Rx)
+- [Demo en Vercel](https://rendimientoquimico.vercel.app)
+- [Repositorio en GitHub](https://github.com/JCAM2327/JCAM2327-Automatizacion_Rendimiento_Rx)
