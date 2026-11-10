@@ -96,7 +96,7 @@ Rutas previstas de la primera versión:
 |---|---|---|
 | `/` | Inicio: presentación, áreas destacadas, proyectos y enlace al blog | Implementado; perfil pendiente |
 | `/sobre-mi` | Perfil, enfoque y trayectoria resumida | Implementado; contenido pendiente |
-| `/proyectos` | Listado de proyectos con filtros por área y estado | Implementado (22 proyectos) |
+| `/proyectos` | Listado de proyectos con filtros por área y estado | Implementado (21 proyectos) |
 | `/proyectos/[slug]` | Detalle de proyecto en MDX | Implementado |
 | Blog (externo) | Enlace configurable vía `NEXT_PUBLIC_BLOG_URL` | Enlace externo |
 | `/formacion` | Formación académica y certificaciones confirmadas | Implementado; contenido pendiente |
@@ -260,7 +260,7 @@ Si una variable opcional está vacía, el enlace correspondiente no se muestra.
 - [ ] Biografía y enfoque definitivos.
 - [ ] Formación académica real (institución, programa, estado, fechas).
 - [ ] Certificaciones y su verificabilidad.
-- [x] Proyectos reales, su estado y enlaces públicos (22 proyectos; 13 portadas pendientes).
+- [x] Proyectos reales, su estado y enlaces públicos (21 proyectos; 12 portadas pendientes).
 - [ ] Enlaces profesionales y email de contacto.
 - [ ] URL del blog externo para `NEXT_PUBLIC_BLOG_URL`.
 - [ ] Dominio de producción para `NEXT_PUBLIC_SITE_URL`.
