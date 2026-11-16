@@ -5,10 +5,10 @@ Este documento es la fuente de verdad del alcance, el contenido y las reglas del
 proyecto. Si el código o el contenido lo contradicen, prevalece este documento
 hasta que se actualice de forma explícita.
 
-> **Estado:** planificación inicial / scaffold en construcción.
-> La aplicación todavía no está publicada y el contenido de perfil está pendiente
-> de confirmación. Nada de lo aquí descrito debe presentarse como terminado sin
-> evidencia verificable.
+> **Estado:** sitio navegable; catálogo de 20 proyectos publicado y GitHub Pages
+> en línea. El sitio Next.js aún no está desplegado; perfil y formación siguen
+> **pendientes de confirmación**. Nada de lo aquí descrito debe presentarse como
+> terminado sin evidencia verificable.
 
 ---
 
@@ -17,7 +17,8 @@ hasta que se actualice de forma explícita.
 Construir un portfolio personal que conecte la trayectoria académica, científica,
 tecnológica y profesional, y que documente el proceso de aprendizaje mediante un
 blog. El sitio debe comunicar con claridad qué sabe hacer la persona, cómo piensa
-y qué está construyendo, sin exagerar logros ni inventar experiencia.
+y qué está construyendo, sin exagerar logros ni inventar experiencia. La voz
+del sitio es **primera persona** (tuteo), sobria pero personal.
 
 ### Objetivos
 
@@ -62,6 +63,10 @@ Estas reglas son obligatorias y tienen prioridad sobre cualquier requisito esté
 6. **Enlaces y email** provienen exclusivamente de variables `NEXT_PUBLIC_*`.
    Si una variable está vacía, el enlace no se renderiza.
 7. Todo el contenido y la documentación se escriben **en español**.
+8. La voz pública del sitio es **primera persona con tuteo** (“publico”,
+   “quiero”, “puedes escribirme”). Evitar tercera persona (“se publicará”,
+   “la persona autora”) y voseo. Mantener el tono sobrio y honesto: pasión sin
+   marketing vacío ni datos inventados.
 
 ---
 
@@ -266,3 +271,16 @@ Si una variable opcional está vacía, el enlace correspondiente no se muestra.
 - [ ] Dominio de producción para `NEXT_PUBLIC_SITE_URL`.
 
 Ninguno de estos puntos debe completarse con datos supuestos.
+
+---
+
+## 14. Voz y estilo (2026-11-16)
+
+- **Primera persona con tuteo:** “publico”, “quiero”, “puedes escribirme”.
+- **Prohibido:** voseo (`podés`, `necesitás`) y tercera persona impersonal
+  (“se publicará”, “la persona autora”, “Portfolio personal de X”).
+- **Tono:** sobrio pero personal; pasión por las disciplinas sin marketing
+  vacío. Los avisos de pendiente se redactan en voz propia
+  (“prefiero no publicar… hasta verificar”).
+- **Espejo:** todo cambio de copy en `src/lib/portfolio.ts` o en las páginas
+  debe reflejarse en `docs/index.html`.

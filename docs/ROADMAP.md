@@ -3,7 +3,7 @@
 Plan de trabajo por fases. El estado refleja la realidad del repositorio, no una
 intención. No se marca una tarea como completada sin verificación.
 
-## Fase 0 — Fundaciones (en curso)
+## Fase 0 — Fundaciones (completada)
 
 - [x] Configuración raíz de Next.js, TypeScript y Tailwind v4.
 - [x] `.env.example` y `.gitignore`.
@@ -12,7 +12,7 @@ intención. No se marca una tarea como completada sin verificación.
 - [x] Tipos de contenido y acceso a contenido.
 - [x] Instalar dependencias (`npm install`) y generar lockfile.
 - [x] Inicializar repositorio Git (`main`, remoto `JCAM2327/portfolio`).
-- [ ] Verificar `npm run typecheck` y `npm run build` (pendiente: el entorno de ejecución de la herramienta no permite lanzar procesos).
+- [x] Verificar `npm run typecheck` y `npm run build` (correctos; última verificación 2026-11-16).
 
 ## Fase 1 — Shell de la aplicación
 
@@ -66,6 +66,7 @@ Solo con necesidad funcional demostrable:
 ## Bloqueos conocidos
 
 - Falta confirmar biografía, formación, certificaciones y enlaces profesionales.
-- Quedan 14 proyectos sin portada propia; usan un placeholder hasta que exista una imagen verificable.
+- Quedan 11 proyectos sin portada propia; usan un placeholder hasta que exista una imagen verificable.
 - La demo de The Spotify Project Models devuelve 404; se retiró su enlace y quedó como MVP. Automatización de rendimiento en reacciones tiene demo pública en Vercel.
 - La paridad visual y la accesibilidad todavía requieren una prueba manual en navegador.
+- El sitio Next.js aún no está desplegado en Vercel; GitHub Pages (`docs/`) es el canal publicado.

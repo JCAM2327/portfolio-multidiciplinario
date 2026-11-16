@@ -15,7 +15,7 @@ import { getEducation } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Formación",
   description:
-    "Formación académica y certificaciones presentadas con su estado real.",
+    "Formación académica y certificaciones con su estado real. Lo que no está verificado queda marcado como pendiente.",
   alternates: { canonical: "/formacion" },
 };
 
@@ -28,7 +28,7 @@ export default function EducationPage() {
       <PageHeader
         eyebrow="Trayectoria"
         title="Formación"
-        description="Estudios y certificaciones con su estado real. Los datos no verificados se marcan como pendientes."
+        description="Estudios y certificaciones con su estado real. Prefiero marcar como pendiente lo que aún no puedo verificar."
       />
 
       <div className="pb-16 pt-10">

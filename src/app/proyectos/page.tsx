@@ -8,7 +8,7 @@ import { AREA_SLUGS, type AreaSlug } from "@/types/content";
 export const metadata: Metadata = {
   title: "Proyectos",
   description:
-    "Proyectos de desarrollo, datos, ciencia e ingeniería presentados con su estado real.",
+    "Mis proyectos de desarrollo, datos, ciencia e ingeniería, con su estado real.",
   alternates: { canonical: "/proyectos" },
 };
 

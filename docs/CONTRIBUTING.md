@@ -18,6 +18,7 @@ No existen scripts de lint ni de tests. No inventar comandos que no estén en
 ## Idioma
 
 - Contenido, documentación, comentarios de producto y textos de UI en **español**.
+- Voz del producto en primera persona con tuteo.
 - Código (nombres de variables, funciones, tipos) en inglés.
 - Slugs y rutas en `kebab-case` sin acentos.
 
@@ -51,6 +52,9 @@ Antes de añadir o editar contenido, leer las reglas de
 - Marcar lo no verificado como `pendiente de confirmación`.
 - No publicar datos personales ni documentos privados.
 - Enlaces y email solo desde variables `NEXT_PUBLIC_*`.
+- Voz pública en **primera persona con tuteo** (sin voseo ni tercera
+  persona impersonal). Mantener el copy de `src/lib/portfolio.ts` y su
+  espejo en `docs/index.html` sincronizados.
 
 El blog es un enlace externo configurable (`NEXT_PUBLIC_BLOG_URL`). No se
 gestiona contenido de blog en este repositorio ni se crean rutas `/blog`.

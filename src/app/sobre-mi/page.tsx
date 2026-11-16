@@ -10,7 +10,8 @@ import { chipClass, eyebrowClass, sectionTitleClass } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: "Sobre mí",
-  description: "Perfil, enfoque y áreas de conocimiento.",
+  description:
+    "Mi perfil, mi enfoque y las áreas de conocimiento que quiero conectar.",
   alternates: { canonical: "/sobre-mi" },
 };
 
@@ -31,7 +32,7 @@ export default function AboutPage() {
         eyebrow="Perfil"
         title={profile?.name ?? "Sobre mí"}
         description={
-          pending ? "Información pendiente de confirmación." : profile?.headline
+          pending ? "Mi información está pendiente de confirmación." : profile?.headline
         }
       />
 
@@ -51,8 +52,8 @@ export default function AboutPage() {
                   <p>{about.paragraphs[1]}</p>
                 </div>
                 <PendingNotice>
-                  La biografía y el enfoque están pendientes de confirmación. No
-                  se publicará información personal hasta verificar los datos.
+                  Mi biografía y mi enfoque están pendientes de confirmación.
+                  No publico información personal hasta verificar los datos.
                 </PendingNotice>
               </>
             ) : (
@@ -103,7 +104,8 @@ export default function AboutPage() {
             <h2 className={`${sectionTitleClass} mt-3.5`}>Áreas</h2>
             <p className="mt-3.5 text-pretty text-[1.02rem] leading-relaxed text-muted">
               Disciplinas que declaro como áreas de interés. No equivalen a
-              títulos, certificaciones ni experiencia verificada.
+              títulos, certificaciones ni experiencia verificada; son el mapa de
+              lo que estudio y quiero seguir construyendo.
             </p>
           </div>
 
@@ -118,7 +120,7 @@ export default function AboutPage() {
           ) : (
             <PendingNotice>
               Las áreas del perfil están pendientes de confirmación. Mientras
-              tanto, estas son las áreas de interés declaradas.
+              tanto, aquí dejo las áreas de interés que declaro.
             </PendingNotice>
           )}
         </section>

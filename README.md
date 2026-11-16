@@ -2,7 +2,7 @@
 
 Sitio personal de **José Carlos Alayo Mondragón** para presentar su trayectoria académica, científica, tecnológica y profesional, junto con un enlace a un blog externo que documenta el proceso de aprendizaje.
 
-> Estado: sitio navegable con home, catálogo de 20 proyectos (listado y detalle), perfil, formación y contacto. La vista de una página está publicada en GitHub Pages: <https://jcam2327.github.io/portfolio-multidiciplinario/>. El sitio Next.js aún no está desplegado y el contenido de perfil está pendiente de confirmación.
+> Estado: sitio navegable con home, catálogo de 20 proyectos (listado y detalle), perfil, formación y contacto. La vista de una página está publicada en GitHub Pages: <https://jcam2327.github.io/portfolio-multidiciplinario/>. El sitio Next.js aún no está desplegado y el contenido de perfil está pendiente de confirmación. La voz del sitio es en primera persona (tuteo), sobria pero personal.
 
 ## Enfoque
 
@@ -83,5 +83,6 @@ public/     Recursos estáticos
 - No presentar ideas o experimentos como proyectos terminados.
 - No inventar proyectos, resultados ni certificaciones.
 - No publicar datos personales ni documentos académicos privados.
+- Escribir en primera persona con tuteo; sin voseo ni tercera persona en la voz pública.
 
 Ver `docs/PROJECT_MASTER.md` para la especificación completa.

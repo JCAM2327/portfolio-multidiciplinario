@@ -12,7 +12,7 @@ export const siteConfig = {
   shortName: "José Alayo",
   tagline: "Construyo puentes entre disciplinas.",
   description:
-    "Portfolio multidisciplinario: ciencia, tecnología e ingeniería para resolver problemas reales.",
+    "Portfolio multidisciplinario de José Carlos Alayo Mondragón: ciencia, tecnología e ingeniería para resolver problemas reales.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   links: {
     github: process.env.NEXT_PUBLIC_GITHUB_URL || undefined,

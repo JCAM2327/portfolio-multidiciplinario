@@ -1,7 +1,7 @@
 ---
 name: "José Carlos Alayo Mondragón"
 headline: "Pendiente de confirmación"
-summary: "Pendiente de confirmación. Este resumen se completará únicamente con información verificada."
+summary: "Pendiente de confirmación. Completaré este resumen únicamente con información verificada."
 areas:
   - frontend
   - backend
@@ -10,12 +10,13 @@ areas:
   - ingenieria-industria
   - educacion-tecnologia
   - interdisciplinario
-lastUpdated: "2026-11-02"
+lastUpdated: "2026-11-16"
 ---
 
 ## Perfil
 
-Contenido pendiente de confirmación.
+Todavía no he publicado biografía.
 
-No se publicará información biográfica hasta verificar los datos con la persona
-responsable del sitio. No completar este archivo con suposiciones.
+No voy a completar este archivo con suposiciones: solo escribiré aquí datos
+verificados sobre mi trayectoria, cuando estén confirmados y quiera
+compartirlos.

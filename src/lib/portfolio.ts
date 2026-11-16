@@ -47,32 +47,31 @@ export const PORTFOLIO_COPY = {
       "aprendizaje documentado",
     ],
     leadName: "José Carlos Alayo Mondragón",
-    leadBefore:
-      "Portfolio personal de ",
+    leadBefore: "Soy ",
     leadAfter:
-      ". Reúne las áreas que quiero conectar —desarrollo web, datos e inteligencia artificial, ciencias, ingeniería e industria, y educación con tecnología— mientras el contenido se verifica y se publica de forma honesta.",
+      ". Este es mi espacio para conectar lo que estudio y construyo —desarrollo web, datos e inteligencia artificial, ciencias, ingeniería e industria, y educación con tecnología— con la misma honestidad con la que trabajo: sin adornos que no pueda respaldar.",
     primaryCta: { label: "Ver proyectos", href: "/proyectos" },
     secondaryCta: { label: "Contacto", href: "/#contacto" },
     statusTitle: "Estado del sitio",
     statusVersion: "v0.2",
     statusNote:
-      "Nada se presenta como terminado sin evidencia verificable. Los proyectos ya están en el catálogo con su estado real; las portadas que faltan se irán agregando.",
+      "No doy por terminado nada sin evidencia verificable. Mis proyectos ya están en el catálogo con su estado real; las portadas que faltan las iré agregando a medida que tenga imágenes que pueda mostrar.",
   },
   about: {
     eyebrow: "Sobre mí",
     title: "Una trayectoria en construcción, contada sin atajos.",
     paragraphs: [
-      "Este espacio nace para conectar la formación académica, la práctica técnica y el aprendizaje continuo en un mismo lugar: un portfolio que explique qué sé hacer, cómo pienso y qué estoy construyendo.",
-      "La biografía definitiva y los detalles de mi trayectoria están pendientes de confirmación. No publico logros, títulos ni experiencia hasta poder respaldarlos con información verificada.",
+      "Quiero unir en un solo lugar la formación académica, la práctica técnica y el aprendizaje continuo: un portfolio que explique qué sé hacer, cómo pienso y qué estoy construyendo.",
+      "La biografía y los detalles de mi trayectoria están pendientes de confirmación. Prefiero no publicar logros, títulos ni experiencia hasta poder respaldarlos con información verificada.",
     ],
     noteTitle: "Contenido pendiente de confirmación.",
     noteBody:
-      "Esta sección se completará con información verificada y con el nivel de detalle que la persona autora decida hacer público.",
+      "Voy a completar esta sección con información verificada y con el nivel de detalle que yo decida hacer público, sin apurar datos que aún no puedo respaldar.",
     principleEyebrow: "Principio de trabajo",
     principle:
       "“Conectar conocimientos para resolver problemas reales, sin exagerar lo que todavía está en proceso.”",
     principleNote:
-      "Regla del proyecto: nada de datos inventados. Cada afirmación debe poder verificarse o marcarse como pendiente.",
+      "Mi regla: nada de datos inventados. Cada afirmación debe poder verificarse o quedar marcada como pendiente.",
   },
   work: {
     eyebrow: "Enfoque",
@@ -80,19 +79,19 @@ export const PORTFOLIO_COPY = {
     lead:
       "Estas preguntas guían mi aprendizaje y mi práctica. Los proyectos concretos están en el catálogo, con su estado real y sus enlaces públicos.",
     note:
-      "Cada proyecto declara si es una idea, un prototipo, un MVP o un proyecto publicado. Las portadas que faltan se agregarán cuando existan imágenes verificables.",
+      "Cada proyecto declara si es una idea, un prototipo, un MVP o un proyecto publicado. Iré agregando las portadas que faltan cuando tenga imágenes verificables.",
   },
   education: {
     eyebrow: "Formación",
     title: "Datos académicos pendientes de verificación.",
     lead:
-      "La formación se publicará con institución, programa, nivel, estado y fechas reales. Los estudios incompletos o en curso se mostrarán como tales, nunca como títulos obtenidos.",
+      "Publicaré mi formación con institución, programa, nivel, estado y fechas reales. Si algo está incompleto o en curso, lo mostraré como tal: nunca como un título obtenido.",
     body:
-      "Si necesitás información académica antes de que esta sección esté completa, el canal correcto será el de contacto profesional cuando esté configurado.",
+      "Si necesitas información académica antes de que esta sección esté completa, puedes escribirme cuando el canal de contacto esté configurado.",
     status: "Pendiente de confirmación",
     pendingTitle: "Formación académica",
     pendingBody:
-      "No se presentan títulos, certificaciones ni instituciones hasta contar con la información verificada y la autorización para publicarla.",
+      "Prefiero no mostrar títulos, certificaciones ni instituciones hasta tener la información verificada y la autorización para publicarla.",
     meta: [
       { label: "Institución", value: "Por confirmar" },
       { label: "Programa", value: "Por confirmar" },
@@ -104,13 +103,13 @@ export const PORTFOLIO_COPY = {
     eyebrow: "Habilidades",
     title: "Herramientas y temas de interés.",
     lead:
-      "Sin porcentajes ni niveles inventados. Esta lista describe el entorno de trabajo y los temas que quiero seguir profundizando.",
+      "Sin porcentajes ni niveles inventados. Esta lista resume mi entorno de trabajo y los temas que quiero seguir profundizando.",
   },
   contact: {
     eyebrow: "Contacto",
     title: "Hablemos cuando los canales estén listos.",
     lead:
-      "Podés explorar el trabajo público en GitHub. LinkedIn y email siguen pendientes de configuración y verificación: no se publican perfiles ni direcciones sin confirmación.",
+      "Puedes explorar mi trabajo público en GitHub. LinkedIn y email siguen pendientes de configuración y verificación: no publico perfiles ni direcciones sin confirmarlos antes.",
     pendingValue: "Por confirmar",
   },
   footer: {

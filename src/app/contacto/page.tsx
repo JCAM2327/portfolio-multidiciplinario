@@ -16,7 +16,8 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: "Enlaces profesionales y medios de contacto.",
+  description:
+    "Mis enlaces profesionales y medios de contacto. Escríbeme cuando quieras.",
   alternates: { canonical: "/contacto" },
 };
 
@@ -152,8 +153,8 @@ export default function ContactPage() {
 
         {activeChannels.length === 0 ? (
           <PendingNotice>
-            Los enlaces de contacto están pendientes de confirmación. Se
-            configuran con las variables `NEXT_PUBLIC_GITHUB_URL`,
+            Mis enlaces de contacto siguen pendientes de confirmación. Los
+            configuro con las variables `NEXT_PUBLIC_GITHUB_URL`,
             `NEXT_PUBLIC_LINKEDIN_URL` y `NEXT_PUBLIC_CONTACT_EMAIL`.
           </PendingNotice>
         ) : null}
