@@ -208,3 +208,25 @@ export function getProjectBySlug(slug: string): Project | null {
 export function getProjectSummaries(): ProjectSummary[] {
   return getProjects().map(({ content: _content, ...summary }) => summary);
 }
+
+/** Máximo de proyectos destacados que muestra la portada. */
+export const FEATURED_HOME_LIMIT = 6;
+
+/**
+ * Resumen de los proyectos marcados como `featured: true` en el frontmatter,
+ * ordenados por `lastUpdated` (hereda el orden de `getProjects`) y limitados
+ * para la portada. El catálogo completo vive en `getProjectSummaries`.
+ */
+export function getFeaturedProjectSummaries(
+  limit: number = FEATURED_HOME_LIMIT,
+): ProjectSummary[] {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new Error(
+      `Límite de proyectos destacados inválido: se esperaba un entero >= 0, se recibió "${limit}".`,
+    );
+  }
+
+  return getProjectSummaries()
+    .filter((project) => project.featured)
+    .slice(0, limit);
+}

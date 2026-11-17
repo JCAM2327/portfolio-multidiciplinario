@@ -37,13 +37,13 @@ export function ProjectCover({
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-muted shadow-sm">
             <ImageOff aria-hidden="true" className="h-4 w-4" />
           </span>
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-faint">
+          <span className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-muted">
             Portada pendiente
           </span>
-          <span className="text-sm font-semibold text-muted">
+          <span className="text-sm font-semibold text-ink">
             {project.title}
           </span>
-          <span className="text-[0.7rem] font-medium text-faint">
+          <span className="text-[0.7rem] font-medium text-muted">
             {AREA_LABELS[project.area]}
           </span>
         </div>

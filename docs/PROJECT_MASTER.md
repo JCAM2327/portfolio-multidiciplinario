@@ -99,7 +99,7 @@ Rutas previstas de la primera versión:
 
 | Ruta | Descripción | Estado |
 |---|---|---|
-| `/` | Inicio: presentación, áreas destacadas, proyectos y enlace al blog | Implementado; perfil pendiente |
+| `/` | Inicio: presentación, áreas, proyectos destacados (subconjunto con `featured: true`) y enlace al blog | Implementado; perfil pendiente |
 | `/sobre-mi` | Perfil, enfoque y trayectoria resumida | Implementado; contenido pendiente |
 | `/proyectos` | Listado de proyectos con filtros por área y estado | Implementado (20 proyectos) |
 | `/proyectos/[slug]` | Detalle de proyecto en MDX | Implementado |
@@ -147,7 +147,7 @@ lastUpdated: "2026-01-01"
 | `area` | slug de área | Sí | Ver tabla de áreas |
 | `status` | enum | Sí | `idea`, `en desarrollo`, `MVP`, `prototipo`, `publicado`, `pausado`, `archivado` |
 | `technologies` | string[] | Sí | Puede ser vacío si no aplica |
-| `featured` | boolean | No | Destacar en inicio |
+| `featured` | boolean | No | Mostrar en la sección de destacados de la portada (`/`); el catálogo `/proyectos` siempre es completo |
 | `startDate` | `YYYY-MM` | No | Fecha de inicio |
 | `lastUpdated` | `YYYY-MM-DD` | Sí | Última revisión del contenido |
 | `repoUrl` | string | No | Solo si es público |

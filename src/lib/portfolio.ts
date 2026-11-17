@@ -81,6 +81,13 @@ export const PORTFOLIO_COPY = {
     note:
       "Cada proyecto declara si es una idea, un prototipo, un MVP o un proyecto publicado. Iré agregando las portadas que faltan cuando tenga imágenes verificables.",
   },
+  featuredWork: {
+    eyebrow: "Destacados",
+    title: "Proyectos que quiero que veas primero.",
+    lead:
+      "Una selección de proyectos con su estado real y sus enlaces públicos. El catálogo completo, con filtros por área y estado, está en la página de proyectos.",
+    cta: "Ver todos los proyectos",
+  },
   education: {
     eyebrow: "Formación",
     title: "Datos académicos pendientes de verificación.",

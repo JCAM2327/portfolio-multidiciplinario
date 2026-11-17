@@ -17,7 +17,8 @@ intención. No se marca una tarea como completada sin verificación.
 ## Fase 1 — Shell de la aplicación
 
 - [x] Layout global con cabecera, navegación y pie.
-- [x] Página de inicio con secciones (presentación, áreas, destacados).
+- [x] Página de inicio con secciones (presentación, áreas, destacados de proyectos).
+- [x] Sección de proyectos destacados en la home (`featured: true`, máx. 6) con CTA a `/proyectos`; catálogo completo y filtros en `/proyectos`.
 - [x] Estilos base y tokens de tema.
 - [x] Componentes de UI reutilizables (contenedor, tarjeta, insignia de estado).
 - [x] Navegación móvil accesible.

@@ -45,6 +45,8 @@
       --accent: #0f766e;
       --accent-2: #2563eb;
       --accent-contrast: #ffffff;
+      --tone-success: #047857;
+      --tone-warning: #b45309;
       --hero-bg: #0b0f14;
       --hero-text: #f5f7f9;
       --hero-muted: #9aa4b2;
@@ -70,6 +72,8 @@
       --accent: #2dd4bf;
       --accent-2: #60a5fa;
       --accent-contrast: #06201d;
+      --tone-success: #34d399;
+      --tone-warning: #fbbf24;
       --hero-bg: #060a0e;
       --hero-text: #f5f7f9;
       --hero-muted: #9aa4b2;
@@ -460,26 +464,72 @@
     }
     .status-list li:last-child { border-bottom: 0; }
     .status-list .label { color: #dbe3ec; font-weight: 600; }
-    .status {
+
+    /* Estados en panel oscuro (hero): colores brillantes OK */
+    .hero-card .status {
       display: inline-flex;
       align-items: center;
       gap: 7px;
       flex: none;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
       font-size: 0.74rem;
       font-weight: 700;
       letter-spacing: 0.03em;
       white-space: nowrap;
     }
-    .status::before {
+    .hero-card .status::before {
       content: "";
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: currentColor;
     }
-    .status-done { color: #34d399; }
-    .status-pending { color: #fbbf24; }
-    .status-empty { color: #94a3b8; }
+    .hero-card .status-done { color: #34d399; }
+    .hero-card .status-pending { color: #fbbf24; }
+    .hero-card .status-empty { color: #94a3b8; }
+
+    /* Estados en tarjetas de proyecto: pills con tono accesible (paridad con Next.js) */
+    .project-card .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex: none;
+      padding: 3px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface-2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      color: var(--text-soft);
+    }
+    .project-card .status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex: none;
+    }
+    .project-card .status-done {
+      border-color: color-mix(in srgb, var(--tone-success) 32%, var(--border));
+      background: color-mix(in srgb, var(--tone-success) 10%, var(--surface));
+      color: var(--tone-success);
+    }
+    .project-card .status-pending {
+      border-color: color-mix(in srgb, var(--tone-warning) 32%, var(--border));
+      background: color-mix(in srgb, var(--tone-warning) 10%, var(--surface));
+      color: var(--tone-warning);
+    }
+    .project-card .status-empty {
+      border-color: var(--border);
+      background: var(--surface-2);
+      color: var(--text-soft);
+    }
 
     .hero-card-note {
       margin-top: 14px;
@@ -585,7 +635,6 @@
       background: var(--surface);
       box-shadow: var(--shadow);
     }
-
     .card-pad { padding: 24px; }
 
     .formation-status {
@@ -736,12 +785,30 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      border-color: var(--border-strong);
+      box-shadow:
+        0 1px 2px rgba(16, 24, 40, 0.04),
+        0 10px 28px -16px rgba(16, 24, 40, 0.16);
       transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
     }
     .project-card:hover {
       transform: translateY(-3px);
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-lg, var(--shadow));
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong));
+      box-shadow:
+        0 2px 4px rgba(16, 24, 40, 0.05),
+        0 18px 40px -18px rgba(16, 24, 40, 0.28);
+    }
+    [data-theme="dark"] .project-card {
+      border-color: var(--border);
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.35),
+        0 14px 32px -18px rgba(0, 0, 0, 0.55);
+    }
+    [data-theme="dark"] .project-card:hover {
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--border-strong));
+      box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 22px 44px -18px rgba(0, 0, 0, 0.65);
     }
 
     .project-cover {
@@ -772,16 +839,16 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-faint);
+      color: var(--text-soft);
     }
     .project-cover-placeholder strong {
       font-size: 0.92rem;
-      color: var(--text-soft);
+      color: var(--text);
     }
     .project-cover-placeholder small {
       font-size: 0.7rem;
       font-weight: 600;
-      color: var(--text-faint);
+      color: var(--text-soft);
     }
 
     .project-body {
@@ -851,7 +918,11 @@
     .project-link:hover {
       border-color: var(--border-strong);
       background: var(--surface-2);
-      color: var(--text);
+    }
+    .project-link-disabled {
+      opacity: 0.7;
+      cursor: default;
+      font-style: normal;
     }
     .project-link:focus-visible {
       outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
@@ -1465,8 +1536,8 @@
                 <p>Aplicación para organizar un amigo secreto, con sorteo sin autoasignaciones y una interfaz alineada al portfolio.</p>
                 <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://jcam2327.github.io/juego-del-AmigoSecreto/" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
-                  <a class="project-link" href="https://github.com/JCAM2327/juego-del-AmigoSecreto" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://jcam2327.github.io/juego-del-Amigo-Secreto/" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/juego-del-Amigo-Secreto" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -1505,7 +1576,7 @@
                 <p>App de reportes ciudadanos para la línea de colectivo 221, hecha con Python y Streamlit.</p>
                 <div class="project-tags"><span>Python</span><span>Streamlit</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://github.com/JCAM2327/colectivo-221" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/colectivo-221-app" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -1523,11 +1594,11 @@
                   <span class="project-area">Datos e IA</span>
                 </div>
                 <h3>Data Friendly</h3>
-                <p>Producto que unifica una interfaz de análisis con un motor Python de perfilado, limpieza, EDA, validación y modelos.</p>
+                <p>Monorepo que reúne una interfaz web y un motor Python para perfilado, limpieza, EDA, validación y modelos.</p>
                 <div class="project-tags"><span>Python</span><span>FastAPI</span><span>Pandas</span><span>Scikit-learn</span><span>TypeScript</span><span>React</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://github.com/JCAM2327/data-companion" target="_blank" rel="noopener noreferrer">Frontend <span aria-hidden="true">↗</span></a>
-                  <a class="project-link" href="https://github.com/JCAM2327/dataclean-ai" target="_blank" rel="noopener noreferrer">Backend <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://data-friendly.vercel.app" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Data-Friendly" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -1560,7 +1631,7 @@
                 <p>Modelos de machine learning para explicar y predecir la intensidad musical en canciones.</p>
                 <div class="project-tags"><span>Python</span><span>Machine Learning</span><span>Pandas</span><span>Jupyter</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://github.com/JCAM2327/the-spotify-project-models" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/The_Spotify_Project_models" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -1576,7 +1647,7 @@
                 <p>Pipeline en Python para limpiar transacciones de ventas y generar reportes y gráficos.</p>
                 <div class="project-tags"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>FPDF</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://github.com/JCAM2327/Data_cleaning_sales_pipeline" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/data-cleaning-sales-pipeline" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -1592,7 +1663,7 @@
                 <p>Repositorio inicial de un proyecto de machine learning geoespacial; contenido y alcance pendientes.</p>
                 <div class="project-tags"><span>Python</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://github.com/JCAM2327/Geospatial_ML" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/geospatial-ml" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -1628,15 +1699,14 @@
               <div class="project-cover"><img class="project-cover-img" src="img/proyectos/apunte-probabilidad-estadistica.webp" alt="Portada de Apunte interactivo de Probabilidad y Estadística" width="1200" height="750" loading="lazy" /></div>
               <div class="project-body">
                 <div class="project-meta">
-                  <span class="status status-done">Publicado</span>
+                  <span class="status status-pending">Pausado</span>
                   <span class="project-area">Educación y tecnología</span>
                 </div>
                 <h3>Apunte interactivo de Probabilidad y Estadística</h3>
-                <p>Apunte interactivo con teoría, calculadoras y ejercicios resueltos de Probabilidad y Estadística.</p>
+                <p>Apunte interactivo con teoría, calculadoras y ejercicios resueltos de Probabilidad y Estadística. Sin enlaces públicos por ahora.</p>
                 <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://jcam2327.github.io/apunte-interactivo-de-probabilidad-y-estadistica/" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">↗</span></a>
-                  <a class="project-link" href="https://github.com/JCAM2327/apunte-interactivo-de-probabilidad-y-estadistica" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <span class="project-link project-link-disabled" aria-disabled="true">Sin demo ni repo públicos</span>
                 </div>
               </div>
             </article>
@@ -1668,7 +1738,7 @@
                 <p>Ejercicios de Python para ciencia de datos del curso de LinkedIn Learning.</p>
                 <div class="project-tags"><span>Python</span><span>Pandas</span><span>Jupyter</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="https://github.com/JCAM2327/Ejercicios-python-ciencia-datos-LinkedIn" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/JCAM2327/Ejercicios-python-ciencia-datos" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>

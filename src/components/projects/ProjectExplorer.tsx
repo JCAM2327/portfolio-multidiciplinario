@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, ChevronDown, RotateCcw, SearchX } from "lucide-react";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { buttonSecondary, selectClass } from "@/lib/styles";
 import {
   AREA_LABELS,
@@ -150,7 +150,7 @@ export function ProjectExplorer({
           <p className="max-w-md text-sm leading-relaxed text-muted">
             {projects.length === 0
               ? "Los proyectos aparecerán aquí a medida que se publiquen y confirmen sus datos."
-              : "Probá con otra área o estado para ampliar los resultados."}
+              : "Prueba con otra área o estado para ampliar los resultados."}
           </p>
           {hasFilters ? (
             <button
@@ -170,13 +170,7 @@ export function ProjectExplorer({
           ) : null}
         </div>
       ) : (
-        <ul className="grid gap-5 sm:grid-cols-2">
-          {filteredProjects.map((project) => (
-            <li key={project.slug}>
-              <ProjectCard project={project} />
-            </li>
-          ))}
-        </ul>
+        <ProjectGrid projects={filteredProjects} />
       )}
     </div>
   );

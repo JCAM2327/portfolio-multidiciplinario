@@ -14,14 +14,16 @@ import { AREA_LABELS, type ProjectSummary } from "@/types/content";
 
 interface ProjectCardProps {
   project: ProjectSummary;
+  /** `sizes` de la portada; ajustar al número de columnas del contexto. */
+  coverSizes?: string;
 }
 
 const projectLinkClass =
   "relative z-20 inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-line-strong hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-accent-2 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas";
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, coverSizes }: ProjectCardProps) {
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg motion-reduce:transform-none">
+    <Card className="group relative flex h-full flex-col overflow-hidden border-line-strong shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/45 hover:shadow-hover motion-reduce:transform-none">
       <Link
         href={`/proyectos/${project.slug}`}
         aria-label={`Ver detalle de ${project.title}`}
@@ -32,7 +34,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         className="absolute inset-x-0 top-0 z-20 h-0.5 bg-linear-to-r from-accent via-accent/60 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100"
       />
 
-      <ProjectCover project={project} className="border-b border-line" />
+      <ProjectCover
+        project={project}
+        className="border-b border-line"
+        sizes={coverSizes}
+      />
 
       <CardHeader>
         <div className="flex flex-wrap items-center gap-2">

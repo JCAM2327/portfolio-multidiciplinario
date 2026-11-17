@@ -13,7 +13,9 @@ import {
 } from "lucide-react";
 import { clsx } from "clsx";
 import { Container } from "@/components/ui/Container";
+import { SectionHead } from "@/components/ui/SectionHead";
 import { Typewriter } from "@/components/Typewriter";
+import { FeaturedProjects } from "@/components/projects/FeaturedProjects";
 import {
   AREA_CHIPS,
   METRICS,
@@ -24,6 +26,7 @@ import {
   type SkillIcon,
   type Tone,
 } from "@/lib/portfolio";
+import { getFeaturedProjectSummaries } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 import {
   buttonGhostDark,
@@ -63,28 +66,9 @@ const workToneClass: Record<Tone, string> = {
   accent: "tone-accent",
 };
 
-function SectionHead({
-  eyebrow,
-  title,
-  lead,
-  className,
-}: {
-  eyebrow: string;
-  title: string;
-  lead?: string;
-  className?: string;
-}) {
-  return (
-    <div className={clsx("max-w-[680px]", className)}>
-      <span className={eyebrowClass}>{eyebrow}</span>
-      <h2 className={clsx(sectionTitleClass, "mt-3.5")}>{title}</h2>
-      {lead ? <p className={clsx(sectionLeadClass, "mt-3.5")}>{lead}</p> : null}
-    </div>
-  );
-}
-
 export default function HomePage() {
   const { hero, about, work, education, skills, contact } = PORTFOLIO_COPY;
+  const featuredProjects = getFeaturedProjectSummaries();
 
   const contactEntries = [
     {
@@ -373,6 +357,8 @@ export default function HomePage() {
           <p className="mt-5 text-[0.82rem] text-faint">{work.note}</p>
         </Container>
       </section>
+
+      <FeaturedProjects projects={featuredProjects} />
 
       <section
         id="formacion"
