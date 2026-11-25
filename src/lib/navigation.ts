@@ -22,6 +22,7 @@ export const SECTION_NAV: NavItem[] = [
   { href: "/#formacion", label: "Formación", sectionId: "formacion" },
   { href: "/#habilidades", label: "Habilidades", sectionId: "habilidades" },
   { href: "/proyectos", label: "Proyectos" },
+  { href: "/colectivo-221", label: "Colectivo 221" },
   { href: "/#contacto", label: "Contacto", sectionId: "contacto" },
 ];
 
