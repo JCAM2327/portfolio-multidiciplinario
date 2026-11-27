@@ -6,6 +6,7 @@ import { SectionHead } from "@/components/ui/SectionHead";
 import { ReporteForm } from "./components/ReporteForm";
 import { TableroLlegadas } from "./components/TableroLlegadas";
 import { ConsultaHorarios } from "./components/ConsultaHorarios";
+import { VistaRecorrido } from "./components/VistaRecorrido";
 import { buttonPrimary } from "@/lib/styles";
 import { siteConfig } from "@/lib/site";
 
@@ -80,6 +81,8 @@ export default function Colectivo221Page() {
           </div>
         </div>
       </section>
+
+      <VistaRecorrido />
 
       <section className="mt-12 sm:mt-16 max-w-[680px] rounded-panel border border-line bg-surface p-6 sm:p-8 shadow-card">
         <h2 className="text-lg font-bold text-ink mb-3">¿Cómo se calcula la llegada?</h2>

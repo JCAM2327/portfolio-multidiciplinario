@@ -37,12 +37,19 @@ export interface Reporte {
   usuarioId: string; // ID anónimo del dispositivo
 }
 
+/** Variante de tramo publicada por la fuente (MCo / SC / MCh) */
+export type Variante = "MCo" | "SC" | "MCh";
+
 /** Parada del catálogo de referencia (datos oficiales o manuales) */
 export interface Parada {
   id: string;
   nombre: string;
   sentido: Sentido;
   orden: number;
+  /** Variante de tramo a la que pertenece (los 6 tramos del PDF de Moovit) */
+  variante: Variante;
+  /** false = tomado de un PDF de terceros, aún sin validación en campo */
+  validadaCampo: boolean;
 }
 
 /** Tipo de servicio (ej. "Diurno", "Nocturno") vinculado a un sentido y tipo de día */
@@ -65,7 +72,32 @@ export interface Horario {
 export interface Fuente {
   id: string;
   nombre: string;
-  tipo: "municipal" | "ciudadana" | "oficial";
+  tipo: "municipal" | "ciudadana" | "oficial" | "tercero";
+}
+
+/** Estado de validación de una parada del catálogo */
+export type EstadoValidacion = "no_validada" | "pendiente" | "validada";
+
+/** Trazabilidad de la fuente de datos de paradas */
+export interface FuenteParada {
+  id: string;
+  nombre: string;
+  url: string;
+  fechaConsulta: string; // ISO 8601
+  tipo: "municipal" | "ciudadana" | "oficial" | "tercero";
+  observaciones?: string;
+}
+
+/** Recorrido completo de la línea 221: una variante en un sentido con sus paradas ordenadas */
+export interface RecorridoParadas {
+  id: string; // ej: "221-MCo-MDP-SC"
+  variante: Variante;
+  sentido: Sentido;
+  paradas: Parada[]; // ordenadas por `orden`
+  fuente: FuenteParada;
+  totalParadas: number;
+  estadoValidacion: EstadoValidacion;
+  observaciones?: string;
 }
 
 /** Resultado de una estimación de llegada */
